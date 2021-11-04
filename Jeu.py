@@ -15,7 +15,7 @@
 # Certaines commandes de test se trouvent dans le programme sous forme de commentaires. Pour les activer, il suffit de
 # supprimer les # les précédant
 #
-# Derniere modification le 04/11 à 15h30
+# Derniere modification le 04/11 à 18h17
 
 import random
 
