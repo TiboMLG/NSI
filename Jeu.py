@@ -46,11 +46,6 @@ JeuShuffle = melange()
 
 # Fonction de test de l'input
 
-def is_digit(check_input):
-    if check_input.isdigit():
-        return True
-    return False
-
 Joueurs = None
 BoolJ = False          # Variable de test pour la valeur de la variable Joueurs
 
