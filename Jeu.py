@@ -10,7 +10,7 @@
 # Cet algorythme ne s'applique qu'avec un nombre de joueurs compris entre 1 et 6
 #
 # La dernière ligne peut créer une erreur selon l'interpreteur utilise. Si cela se passe, ce n'est pas un
-# problème, l'algorythme s'arrête dans tous les cas et cette lignes permet seulement qu'il s'arrête proprement
+# problème, l'algorythme s'arrête dans tous les cas et cette lignes permet seulement qu'il s'arrête proprement. Elle peut aussi être supprimée
 #
 # Certaines commandes de test se trouvent dans le programme sous forme de commentaires. Pour les activer, il suffit de
 # supprimer les # les précédant
