@@ -9,13 +9,13 @@
 #
 # Cet algorythme ne s'applique qu'avec un nombre de joueurs compris entre 1 et 6
 #
-# La ligne 46 et la dernière peuvent créer une erreur selon l'interpreteur utilise. Si cela se passe, ce n'est pas un
-# problème, l'algorythme s'arrête dans tous les cas et ces lignes permettent seulement qu'il s'arrête proprement
+# La dernière ligne peut créer une erreur selon l'interpreteur utilise. Si cela se passe, ce n'est pas un
+# problème, l'algorythme s'arrête dans tous les cas et cette lignes permet seulement qu'il s'arrête proprement
 #
 # Certaines commandes de test se trouvent dans le programme sous forme de commentaires. Pour les activer, il suffit de
 # supprimer les # les précédant
 #
-# Derniere modification le 04/11 à 16h30
+# Derniere modification le 04/11 à 15h30
 
 import random
 
@@ -43,8 +43,6 @@ JeuShuffle = melange()
 
 
 """ distribution """
-
-# Fonction de test de l'input
 
 Joueurs = None
 BoolJ = False          # Variable de test pour la valeur de la variable Joueurs
@@ -160,4 +158,3 @@ else:
     print("Les cartes dans le pot sont:", Pot)
 
 exit()
-
