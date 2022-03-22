@@ -5,7 +5,6 @@ print(nbr)
 
 max = int(input("Nombre entre 0 et:"))
 probs = [i for i in range(max)]
-probs = [i for i in range(max)]
 
 guess = probs[round(len(probs)/2)+1]
 
