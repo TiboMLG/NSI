@@ -1,10 +1,11 @@
 from random import randint
 
-nbr = randint(0, 100)
-print(nbr)
 
 max = int(input("Nombre entre 0 et:"))
 probs = [i for i in range(max)]
+
+nbr = randint(0, max)
+print(nbr)
 
 guess = probs[round(len(probs)/2)+1]
 
