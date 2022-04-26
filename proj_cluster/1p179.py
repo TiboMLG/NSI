@@ -43,16 +43,22 @@ props = [[8, 10],
 for el in props:
     el.append(el[1] - el[0])
 
+
+# CREATION DU GRAPHIQUE GANTT
+
 fig, gnt = plt.subplots()
 
+# Définition des limites du graphique
 gnt.set_ylim(0, len(props) + 1)
 gnt.set_xlim(8, 20)
 
+# Légende
 gnt.set_xlabel('Heures')
 gnt.set_ylabel('Propositions')
 
-ticks = []
-ticks_label = []
+# Création des points de référence
+ticks = []  # Liste comprennant les coordonnées des ticks
+ticks_label = []    # Liste comprennant les noms des ticks
 
 for i in range(1, len(props) + 2):
     if i < len(props) + 1:
@@ -62,11 +68,12 @@ for i in range(1, len(props) + 2):
         ticks.append(i * 50 / len(props))
         ticks_label.append("Choix")
 
-gnt.set_yticks(ticks)
-gnt.set_yticklabels(ticks_label)
+gnt.set_yticks(ticks)   # Assignation des ticks
+gnt.set_yticklabels(ticks_label)    # Assignation des noms des ticks
 
-gnt.grid(True)
+gnt.grid(True)  # Affichage de la grille
 
+# Placement des propositions de location
 i = 0
 while i < len(props):
     for el in props:
@@ -84,11 +91,14 @@ cluster = acceptation(props, cluster)
 print(props)  # Affichage des propositions
 print(cluster)  # Affichage du choix final
 
-colours = ['blue', 'red', 'green', 'cyan', 'magenta', 'yellow', 'black']
+# Liste des couleurs utilisables
+colours = ['blue', 'red', 'green', 'cyan', 'black', 'magenta', 'yellow']
+
+# Ajout des locations sélectionnées au graphique
 i = 0
 for loc in cluster:
     gnt.broken_barh([(loc[0], loc[-1])], (ticks[-1], -2), facecolors=colours[i])
     i += 1
 
-plt.savefig('gantt.png')
-plt.show()
+plt.savefig('gantt.png')    # Sauvegarde du graphique
+plt.show()  # Affichage du graphique
