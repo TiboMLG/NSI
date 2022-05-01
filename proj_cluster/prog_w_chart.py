@@ -1,6 +1,6 @@
 from operator import itemgetter
 import matplotlib.pyplot as plt
-
+from propositions import props
 
 # FONCTIONS
 
@@ -23,26 +23,9 @@ def acceptation(propositions, agenda):
                     propositions.remove(p)  # Suppression de celle-ci aux propositions
     return agenda
 
-
-# Propositions de locations
-props = [[8, 10],
-         [8, 9],
-         [8, 12],
-         [9, 15],
-         [9, 13],
-         [11, 14],
-         [13, 15],
-         [14, 17],
-         [16, 17],
-         [16, 18],
-         [17, 20],
-         [19, 20]
-         ]
-
 # Calcul des durées des locations
 for el in props:
     el.append(el[1] - el[0])
-
 
 # CREATION DU GRAPHIQUE GANTT
 
@@ -58,7 +41,7 @@ gnt.set_ylabel('Propositions')
 
 # Création des points de référence
 ticks = []  # Liste comprennant les coordonnées des ticks
-ticks_label = []    # Liste comprennant les noms des ticks
+ticks_label = []  # Liste comprennant les noms des ticks
 
 for i in range(1, len(props) + 2):
     if i < len(props) + 1:
@@ -68,8 +51,8 @@ for i in range(1, len(props) + 2):
         ticks.append(i * 50 / len(props))
         ticks_label.append("Choix")
 
-gnt.set_yticks(ticks)   # Assignation des ticks
-gnt.set_yticklabels(ticks_label)    # Assignation des noms des ticks
+gnt.set_yticks(ticks)  # Assignation des ticks
+gnt.set_yticklabels(ticks_label)  # Assignation des noms des ticks
 
 gnt.grid(True)  # Affichage de la grille
 
@@ -84,6 +67,7 @@ while i < len(props):
 props = sorted(props, key=itemgetter(2), reverse=True)
 
 # Liste des locations choisies. Ici avec l'heure de départ en indice 0 et l'heure de fin en indice 1
+# Sous forme [[dbt des locations], [h de début, h de fin, laps de temps], [fin des locations]]
 cluster = [[8, 8, 0], [20, 20, 0]]
 
 cluster = acceptation(props, cluster)
@@ -100,5 +84,5 @@ for loc in cluster:
     gnt.broken_barh([(loc[0], loc[-1])], (ticks[-1], -2), facecolors=colours[i])
     i += 1
 
-plt.savefig('gantt.png')    # Sauvegarde du graphique
+plt.savefig('gantt.png')  # Sauvegarde du graphique
 plt.show()  # Affichage du graphique
